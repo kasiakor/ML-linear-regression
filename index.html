@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Souvlaki Price Predictor</title>
 
 <style>
@@ -19,18 +19,13 @@
   --shadow:0 14px 34px rgba(5,31,58,0.10);
 }
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
   font-family:"Segoe UI",Roboto,Arial,sans-serif;
-  background: #0a4c8f;
+  background:#0a4c8f;
   color:var(--text);
 }
 
@@ -43,8 +38,7 @@ body{
 
 .header{
   position:relative;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,252,0.96));
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,252,0.96));
   text-align:center;
   padding:90px 20px 70px;
   overflow:hidden;
@@ -252,11 +246,6 @@ p{
   box-shadow:0 8px 18px rgba(8,59,110,0.06);
 }
 
-.highlight{
-  color:var(--green-dark);
-  font-weight:800;
-}
-
 .formula{
   font-family:"Consolas","SFMono-Regular",monospace;
   font-size:1.6rem;
@@ -341,7 +330,7 @@ p{
   margin:8px 0 0;
   line-height:1.7;
 }
-    
+
 .example-divider{
   height:2px;
   background:#e1efe6;
@@ -349,6 +338,7 @@ p{
   width:60%;
   border-radius:2px;
 }
+
 label{
   display:block;
   font-weight:800;
@@ -370,11 +360,6 @@ input[type="number"]{
   border-radius:12px;
   background:#fcfdff;
   color:var(--text);
-}
-
-input[type="range"]{
-  padding:0;
-  accent-color:#cd1c18;
 }
 
 button{
@@ -404,17 +389,9 @@ button:hover{
   background:#083b6e;
 }
 
-.result{
-  font-size:3rem;
-  font-weight:900;
-  text-align:center;
-  margin-top:22px;
-  color:#cd1c18;
-  text-shadow:0 2px 0 rgba(255,255,255,0.4);
-}
-
-.control-panel{
-  max-width:700px;
+.control-panel,
+.add-data-panel{
+  max-width:820px;
   margin:0 auto;
   background:linear-gradient(180deg, #ffffff, #f7fbff);
   border:1px solid var(--border);
@@ -424,13 +401,7 @@ button:hover{
 }
 
 .add-data-panel{
-  max-width:820px;
-  margin:22px auto 0;
-  background:linear-gradient(180deg, #ffffff, #f7fbff);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 10px 20px rgba(8,59,110,0.06);
+  margin-top:22px;
 }
 
 .form-grid{
@@ -447,7 +418,6 @@ button:hover{
   background:white;
 }
 
-/* Table base */
 .table{
   width:100%;
   border-collapse:separate;
@@ -455,10 +425,7 @@ button:hover{
   min-width:620px;
 }
 
-/* Header */
-.table thead{
-  background:#00c623;
-}
+.table thead{ background:#00c623; }
 
 .table th{
   color:white;
@@ -468,50 +435,27 @@ button:hover{
   font-size:1.05rem;
 }
 
-/* Rounded corners */
-.table th:first-child{
-  border-top-left-radius:16px;
-}
-.table th:last-child{
-  border-top-right-radius:16px;
-}
+.table th:first-child{ border-top-left-radius:16px; }
+.table th:last-child{ border-top-right-radius:16px; }
 
-/* Rows */
 .table td{
   padding:16px;
   font-size:1.05rem;
   border-bottom:1px solid #e7eef6;
 }
 
-/* Zebra striping */
-.table tbody tr:nth-child(even){
-  background:#f6fbf8;
-}
+.table tbody tr:nth-child(even){ background:#f6fbf8; }
+.table tbody tr:hover{ background:#e8f9ef; transition:0.2s ease; }
 
-/* Hover */
-.table tbody tr{
-  transition:0.2s ease;
-}
+.table tbody tr:last-child td:first-child{ border-bottom-left-radius:16px; }
+.table tbody tr:last-child td:last-child{ border-bottom-right-radius:16px; }
 
-.table tbody tr:hover{
-  background:#e8f9ef;
-}
-
-/* Last row rounded */
-.table tbody tr:last-child td:first-child{
-  border-bottom-left-radius:16px;
-}
-.table tbody tr:last-child td:last-child{
-  border-bottom-right-radius:16px;
-}
-
-/* Highlight Alpha column */
 .table td:last-child{
   font-weight:800;
   color:#00c623;
 }
-    
-    .avg-alpha-box{
+
+.avg-alpha-box{
   margin:22px auto 0;
   padding:22px;
   border:2px solid #00c623;
@@ -529,7 +473,9 @@ button:hover{
   margin-bottom:10px;
 }
 
-.avg-text{
+.avg-text,
+.avg-formula,
+.avg-note{
   font-size:1rem;
   color:#35546f;
   margin-bottom:10px;
@@ -543,12 +489,6 @@ button:hover{
   margin-bottom:10px;
 }
 
-.avg-formula{
-  font-size:1rem;
-  color:#35546f;
-  margin-bottom:10px;
-}
-
 .avg-result{
   font-size:1.6rem;
   font-weight:900;
@@ -556,12 +496,7 @@ button:hover{
   margin-bottom:10px;
 }
 
-.avg-note{
-  font-size:1rem;
-  color:#0b2a44;
-}
-    
-    .alpha-display-box{
+.alpha-display-box{
   background:#f8fff9;
   border:2px solid #00c623;
   border-radius:16px;
@@ -575,28 +510,21 @@ button:hover{
   color:#083b6e;
   margin-bottom:8px;
 }
-    
-.alpha-hint{
-  font-size:0.8rem;
-  font-weight:600;
-  opacity:0.9;
-  margin-left:6px;
-}
 
 .alpha-value{
-  font-size:1.6rem;
+  font-size:1.9rem;
   font-weight:900;
   color:#00c623;
   margin-bottom:6px;
 }
 
 .alpha-formula{
-  font-size:1.15rem;
-  font-weight:800;
-  color:#083b6e;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#35546f;
   margin-top:10px;
 }
-    
+
 .prediction-output{
   margin-top:22px;
   padding:22px 18px;
@@ -659,45 +587,14 @@ button:hover{
   min-height:24px;
 }
 
-.footer-note{
-  text-align:center;
-  color:#4f6d86;
-  font-size:0.95rem;
-  padding:10px 0 30px;
-}
-
 @media (max-width:768px){
-  .header{
-    padding:78px 18px 58px;
-  }
-
-  section{
-    padding:24px 18px;
-  }
-
-  .header h1{
-    font-size:2.8rem;
-  }
-
-  h2{
-    font-size:1.55rem;
-  }
-
-  .result{
-    font-size:2.4rem;
-  }
-
-  .visual-container{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .button-row{
-    grid-template-columns:1fr;
-  }
+  .header{ padding:78px 18px 58px; }
+  section{ padding:24px 18px; }
+  .header h1{ font-size:2.8rem; }
+  h2{ font-size:1.55rem; }
+  .visual-container{ grid-template-columns:1fr; }
+  .form-grid{ grid-template-columns:1fr; }
+  .button-row{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -706,7 +603,6 @@ button:hover{
 
 <header class="header">
   <div class="stripes"></div>
-
   <div class="content">
     <span class="badge">AI Meets Greek Street Food</span>
     <h1>From Stick to Wrap</h1>
@@ -773,77 +669,76 @@ button:hover{
     <h2>How the Prediction Works</h2>
   </div>
 
-  <p>
+  <p class="section-heading">
     Linear regression finds a straight-line relationship between two things. In this project,
     it connects <strong>stick price</strong> and <strong>wrap price</strong>.
   </p>
 
-  <p>
-    This means as the stick price increases, the wrap price increases too.
-    The value α represents the extra cost of pita, ingredients, and profit.
-  </p>
+    <p class="small-note">
+  Alpha (α) represents the extra cost of pita and added ingredients. Shows how many times bigger the wrap price is compared to the stick price.   Alpha is a ratio between two prices.
+</p>
 
-  <div class="formula">Wrap ≈ α × Stick</div>
 
- <div class="example-box">
-  <div class="example-title">Example: Kostas</div>
 
-  <!-- Prediction -->
-  <div class="example-row">
-    <div class="example-card result-card">
-      <span class="example-label">Wrap Price</span>
-      <span class="example-value">€3.80</span>
+  <div class="formula">Wrap = α × Stick</div>
+
+  <div class="example-box">
+    <div class="example-title">Example: Kostas</div>
+
+    <div class="example-row">
+      <div class="example-card">
+        <span class="example-label">Wrap Price</span>
+        <span class="example-value">€3.80</span>
+      </div>
+
+      <div class="example-symbol">=</div>
+
+      <div class="example-card result-card">
+        <span class="example-label">Alpha</span>
+        <span class="example-value">1.73</span>
+      </div>
+
+      <div class="example-symbol">×</div>
+
+      <div class="example-card">
+        <span class="example-label">Stick Price</span>
+        <span class="example-value">€2.20</span>
+      </div>
     </div>
 
-    <div class="example-symbol">≈</div>
+    <p class="example-note">
+      Prediction: <strong>Wrap = 1.73 × 2.20 = 3.80</strong>
+    </p>
 
-    <div class="example-card">
-      <span class="example-label">Alpha</span>
-      <span class="example-value">1.73</span>
+    <div class="example-divider"></div>
+
+    <div class="example-row">
+      <div class="example-card result-card">
+        <span class="example-label">Alpha</span>
+        <span class="example-value">1.73</span>
+      </div>
+
+      <div class="example-symbol">=</div>
+
+      <div class="example-card">
+        <span class="example-label">Wrap</span>
+        <span class="example-value">€3.80</span>
+      </div>
+
+      <div class="example-symbol">÷</div>
+
+      <div class="example-card">
+        <span class="example-label">Stick</span>
+        <span class="example-value">€2.20</span>
+      </div>
     </div>
 
-    <div class="example-symbol">×</div>
-
-    <div class="example-card">
-      <span class="example-label">Stick Price</span>
-      <span class="example-value">€2.20</span>
-    </div>
+    <p class="example-note">
+      Learned from data: <strong>α = 3.80 ÷ 2.20 = 1.73</strong>
+    </p>
   </div>
-
-  <p class="example-note">
-    Prediction: <strong>Wrap ≈ 1.73 × 2.20 ≈ 3.80</strong>
-  </p>
-
-  <!-- Divider -->
-  <div class="example-divider"></div>
-
-  <!-- Alpha calculation -->
-  <div class="example-row">
-    <div class="example-card">
-      <span class="example-label">Alpha</span>
-      <span class="example-value">1.73</span>
-    </div>
-
-    <div class="example-symbol">=</div>
-
-    <div class="example-card">
-      <span class="example-label">Wrap</span>
-      <span class="example-value">€3.80</span>
-    </div>
-
-    <div class="example-symbol">÷</div>
-
-    <div class="example-card">
-      <span class="example-label">Stick</span>
-      <span class="example-value">€2.20</span>
-    </div>
-  </div>
-
-  <p class="example-note">
-    Learned from data: <strong>α = 3.80 ÷ 2.20 ≈ 1.73</strong>
-  </p>
-</div>
 </section>
+
 <section>
   <div class="section-heading">
     <div class="section-title">Training Data</div>
@@ -857,47 +752,49 @@ button:hover{
           <th>Shop</th>
           <th>Stick (€)</th>
           <th>Wrap (€)</th>
-         <th>Alpha <span class="alpha-hint">(Wrap ÷ Stick)</span>
-</th>
+          <th>Alpha <span style="font-size:0.8rem;font-weight:600;opacity:0.9;">(Wrap ÷ Stick)</span></th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
   </div>
-    
-<div class="avg-alpha-box">
-  <div class="avg-title">How We Calculate Alpha (α)</div>
 
-  <p class="avg-text">
-    We calculate alpha by averaging the values from all shops:
-  </p>
+  <div class="avg-alpha-box">
+    <div class="avg-title">How We Calculate Alpha (α)</div>
 
-  <div class="avg-values" id="avgAlphaValues"></div>
+    <p class="avg-text">
+      We calculate alpha by averaging the values from all shops:
+    </p>
 
-  <div class="avg-formula">
-    α = (sum of all values) ÷ number of shops
+    <div class="avg-values" id="avgAlphaValues"></div>
+
+    <div class="avg-formula">
+      α = (sum of all values) ÷ number of shops
+    </div>
+
+    <div class="avg-result" id="avgAlphaDisplay"></div>
+
+    <p class="avg-note" id="avgAlphaPrediction"></p>
   </div>
-
-  <div class="avg-result" id="avgAlphaDisplay"></div>
-
-  <p class="avg-note" id="avgAlphaPrediction"></p>
-</div>
 
   <div class="add-data-panel">
     <div class="subhead">Add New Data Point</div>
+
     <div class="form-grid">
       <div>
         <label for="shopName">Shop Name</label>
-        <input type="text" id="shopName" placeholder="Enter shop name">
+        <input type="text" id="shopName" placeholder="Enter shop name" />
       </div>
-     <div>
-  <label for="newStick">Stick (€)</label>
-  <input type="number" id="newStick" step="0.01" min="2.00" placeholder="2.50">
-</div>
-<div>
-  <label for="newWrap">Wrap (€)</label>
-  <input type="number" id="newWrap" step="0.01" min="2.00" placeholder="4.20">
-</div>
+
+      <div>
+        <label for="newStick">Stick (€)</label>
+        <input type="number" id="newStick" step="0.01" min="2.00" placeholder="2.50" />
+      </div>
+
+      <div>
+        <label for="newWrap">Wrap (€)</label>
+        <input type="number" id="newWrap" step="0.01" min="2.00" placeholder="4.20" />
+      </div>
     </div>
 
     <div class="button-row">
@@ -917,21 +814,24 @@ button:hover{
 
   <div class="control-panel">
     <label for="stick">Stick Price (€)</label>
-    <input type="number" id="stick" placeholder="Enter stick price" step="0.01" min="0">
+    <input type="number" id="stick" placeholder="Enter stick price" step="0.01" min="0" />
 
-    <label for="manualAlpha">Alpha (α)</label>
-    <input type="number" id="manualAlpha" placeholder="Enter alpha value" step="0.01" min="0">
+    <div class="alpha-display-box">
+      <div class="alpha-title">Current Learned Alpha (α)</div>
+      <div class="alpha-value" id="currentAlphaValue">—</div>
+      <div class="alpha-formula" id="currentAlphaFormula">α is calculated automatically from the training data</div>
+    </div>
 
     <p class="small-note">
-      Enter your own alpha value to test different predictions.
+      The model automatically uses the latest average alpha from your training dataset.
     </p>
 
-    <button onclick="predictManual()">Predict Wrap Price</button>
+    <button onclick="predictWrapPrice()">Predict Wrap Price</button>
 
     <div class="prediction-output" id="predictionOutput">
       <div class="prediction-label">Predicted Wrap Price</div>
       <div class="prediction-value" id="result">—</div>
-      <div class="prediction-formula" id="predictionFormula">Wrap ≈ α × Stick</div>
+      <div class="prediction-formula" id="predictionFormula">Wrap = α × Stick</div>
     </div>
   </div>
 </section>
@@ -942,9 +842,16 @@ button:hover{
     <h2>Model Line vs Real Shop Data</h2>
   </div>
 
-  <p class="small-note">The plotted points show observed shop prices.</p>
-      <p class="small-note">The green line shows the model relationship between stick price and wrap price using the selected alpha value.</p>
-      <p class="small-note">When you add data, the graph rescales automatically.</p>
+<p class="small-note">
+  The green line shows what the model thinks the wrap price should be. The green line is created using the average alpha (α) from all shops. So for every stick price, it shows the predicted wrap price.
+</p>
+<p class="small-note">
+ It draws a line using the rule: Wrap = α × Stick.
+</p>
+<p class="small-note">
+  If a blue dot is close to the green line, the prediction is good.
+</p>
+    
   <canvas id="priceChart" width="1000" height="420"></canvas>
 </section>
 
@@ -957,7 +864,7 @@ button:hover{
   <div class="eval-grid">
     <div class="info-card">
       <div class="subhead">Benefits</div>
-      <p>Simple model, real-world context, quick interaction, and a strong example of how linear regression can explain everyday prices.</p>
+      <p>Simple model, real-world context, quick interaction, and an example of how linear regression can explain everyday prices.</p>
     </div>
 
     <div class="info-card">
@@ -966,160 +873,89 @@ button:hover{
     </div>
   </div>
 </section>
-
-<div class="footer-note">
-  Built as a playful machine learning concept with a cleaner visual identity.
-</div>
-
 </div>
 
 <script>
 const data = [
-  {shop:"Kostas", stick:2.2, wrap:3.8},
-  {shop:"Thanasis", stick:2.5, wrap:4.2},
-  {shop:"Lefteris", stick:2.4, wrap:4.0},
-  {shop:"Gyros Elladas", stick:2.3, wrap:3.9},
-  {shop:"Savvas", stick:2.6, wrap:4.3}
+  { shop: "Kostas", stick: 2.2, wrap: 3.8 },
+  { shop: "Thanasis", stick: 2.5, wrap: 4.2 },
+  { shop: "Lefteris", stick: 2.4, wrap: 4.0 },
+  { shop: "Gyros Elladas", stick: 2.3, wrap: 3.9 },
+  { shop: "Savvas", stick: 2.6, wrap: 4.3 }
 ];
 
-function alpha(x){
-  return x.wrap / x.stick;
+function alpha(record) {
+  return record.wrap / record.stick;
 }
 
-function averageAlpha(){
-  return data.reduce((sum, d) => sum + alpha(d), 0) / data.length;
-}
-    
-function renderAverageAlphaBox(){
-  const alphaValues = data.map(d => alpha(d));
-  const alphaText = alphaValues.map(a => a.toFixed(2)).join(" + ");
-  const alphaSum = alphaValues.reduce((sum, a) => sum + a, 0);
-  const avg = alphaSum / alphaValues.length;
-
-  document.getElementById("avgAlphaValues").innerText = alphaText;
-  document.getElementById("avgAlphaDisplay").innerText =
-    `α = (${alphaSum.toFixed(2)} ÷ ${alphaValues.length}) ≈ ${avg.toFixed(2)}`;
-
-  document.getElementById("avgAlphaPrediction").innerHTML =
-    `This average alpha is used in the prediction: <strong>Wrap ≈ ${avg.toFixed(2)} × Stick</strong>`;
-}
-    
-    function getAlphaValues(){
-  return data.map(d => alpha(d));
+function averageAlpha() {
+  if (data.length === 0) return 0;
+  const total = data.reduce((sum, record) => sum + alpha(record), 0);
+  return total / data.length;
 }
 
-function getAlphaRange(){
-  const alphaValues = getAlphaValues();
-  const minAlpha = Math.min(...alphaValues);
-  const maxAlpha = Math.max(...alphaValues);
-  const avgAlpha = averageAlpha();
-
-  const padding = 0.05;
-
-  return {
-    min: Math.max(0.5, minAlpha - padding),
-    max: maxAlpha + padding,
-    avg: avgAlpha
-  };
-}
-
-function syncAlphaSlider(resetValue = true){
-  const alphaSlider = document.getElementById("alpha");
-  const datasetAlphaValue = document.getElementById("datasetAlphaValue");
-  const { min, max, avg } = getAlphaRange();
-
-  alphaSlider.min = min.toFixed(2);
-  alphaSlider.max = max.toFixed(2);
-
-  if (resetValue) {
-    alphaSlider.value = avg.toFixed(2);
-  } else {
-    let current = parseFloat(alphaSlider.value);
-    if (isNaN(current)) current = avg;
-
-    if (current < min) current = min;
-    if (current > max) current = max;
-
-    alphaSlider.value = current.toFixed(2);
-  }
-
-  datasetAlphaValue.innerText = avg.toFixed(2);
-  updateAlphaLabel();
-}
-function updateAlphaLabel(){
-  const a = parseFloat(document.getElementById("alpha").value);
-  if (!isNaN(a)) {
-    document.getElementById("alphaValue").innerText = a.toFixed(2);
-  }
-}
-function render(){
+function renderTable() {
   const tbody = document.querySelector("#dataTable tbody");
   tbody.innerHTML = "";
 
-  data.forEach(d => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${d.shop}</td>
-      <td>${d.stick.toFixed(2)}</td>
-      <td>${d.wrap.toFixed(2)}</td>
-      <td>${alpha(d).toFixed(2)}</td>
+  data.forEach((record) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${record.shop}</td>
+      <td>${record.stick.toFixed(2)}</td>
+      <td>${record.wrap.toFixed(2)}</td>
+      <td>${alpha(record).toFixed(2)}</td>
     `;
-    tbody.appendChild(tr);
+    tbody.appendChild(row);
   });
+}
 
-  renderAverageAlphaBox();
+function renderAverageAlphaBox() {
+  const alphaValues = data.map((record) => alpha(record));
+  const alphaText = alphaValues.map((value) => value.toFixed(2)).join(" + ");
+  const alphaSum = alphaValues.reduce((sum, value) => sum + value, 0);
+  const avg = averageAlpha();
+
+  document.getElementById("avgAlphaValues").innerText = alphaText;
+  document.getElementById("avgAlphaDisplay").innerText =
+    `α = (${alphaSum.toFixed(2)} ÷ ${alphaValues.length}) = ${avg.toFixed(2)}`;
+
+  document.getElementById("avgAlphaPrediction").innerHTML =
+    `This average alpha is used in the prediction: <strong>Wrap = ${avg.toFixed(2)} × Stick</strong>`;
+}
+
+function renderPredictionAlpha() {
+  const avg = averageAlpha();
+  document.getElementById("currentAlphaValue").innerText = avg.toFixed(2);
+  document.getElementById("currentAlphaFormula").innerText =
+    `α = average of all (Wrap ÷ Stick) values = ${avg.toFixed(2)}`;
+}
+
+function predictWrapPrice() {
+  const stick = parseFloat(document.getElementById("stick").value);
+  const resultEl = document.getElementById("result");
+  const formulaEl = document.getElementById("predictionFormula");
+  const avg = averageAlpha();
+
+  if (isNaN(stick) || stick <= 0) {
+    resultEl.innerText = "—";
+    formulaEl.innerText = "Please enter a valid stick price.";
+    return;
+  }
+
+  const predictedWrap = stick * avg;
+
+  resultEl.innerText = `€${predictedWrap.toFixed(2)}`;
+  formulaEl.innerText =
+    `Wrap = ${avg.toFixed(2)} × ${stick.toFixed(2)} = ${predictedWrap.toFixed(2)}`;
+
   drawChart();
 }
 
-function predict(){
-  const stickInput = document.getElementById("stick");
-  const resultEl = document.getElementById("result");
-
-  const stick = parseFloat(stickInput.value);
-  const a = averageAlpha();
-
-  if (isNaN(stick) || stick <= 0){
-    resultEl.innerText = "Enter valid price";
-    return;
-  }
-
-  const result = stick * a;
-
-  document.getElementById("alphaValueDisplay").innerText =
-    "α = " + a.toFixed(2);
-
-  document.getElementById("alphaInline").innerText =
-    a.toFixed(2);
-
-  resultEl.innerText = "€" + result.toFixed(2);
-
-  drawChart(a);
-}
-    
-function predictManual(){
-  const stick = parseFloat(document.getElementById("stick").value);
-  const alpha = parseFloat(document.getElementById("manualAlpha").value);
-  const resultEl = document.getElementById("result");
-  const formulaEl = document.getElementById("predictionFormula");
-
-  if (isNaN(stick) || stick <= 0 || isNaN(alpha) || alpha <= 0){
-    resultEl.innerText = "—";
-    formulaEl.innerText = "Wrap ≈ α × Stick";
-    return;
-  }
-
-  const result = stick * alpha;
-  resultEl.innerText = "€" + result.toFixed(2);
-  formulaEl.innerText = `Wrap ≈ ${alpha.toFixed(2)} × ${stick.toFixed(2)} = ${result.toFixed(2)}`;
-
-  drawChart(alpha);
-}
-
-function getChartRanges(a){
-  const stickValues = data.map(d => d.stick);
-  const wrapValues = data.map(d => d.wrap);
-
-  const modelWrapValues = stickValues.map(s => s * a);
+function getChartRanges(avgAlpha) {
+  const stickValues = data.map((record) => record.stick);
+  const wrapValues = data.map((record) => record.wrap);
+  const modelWrapValues = stickValues.map((stick) => stick * avgAlpha);
 
   const allX = [...stickValues];
   const allY = [...wrapValues, ...modelWrapValues];
@@ -1140,65 +976,42 @@ function getChartRanges(a){
   };
 }
 
-function drawChart(){
+function drawChart() {
   const canvas = document.getElementById("priceChart");
-  if (!canvas) return;
+  if (!canvas || data.length === 0) return;
 
   const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
-  ctx.clearRect(0, 0, w, h);
-
-  if (data.length === 0) return;
-
+  const width = canvas.width;
+  const height = canvas.height;
   const padding = { left: 80, right: 40, top: 30, bottom: 60 };
-
   const avgAlpha = averageAlpha();
 
-  const stickValues = data.map(d => d.stick);
-  const wrapValues = data.map(d => d.wrap);
-  const modelWrapValues = stickValues.map(s => s * avgAlpha);
+  const { xMin, xMax, yMin, yMax } = getChartRanges(avgAlpha);
 
-  const allX = [...stickValues];
-  const allY = [...wrapValues, ...modelWrapValues];
+  const xScale = (x) =>
+    padding.left + ((x - xMin) / (xMax - xMin)) * (width - padding.left - padding.right);
 
-  let xMin = Math.min(...allX);
-  let xMax = Math.max(...allX);
-  let yMin = Math.min(...allY);
-  let yMax = Math.max(...allY);
+  const yScale = (y) =>
+    height - padding.bottom - ((y - yMin) / (yMax - yMin)) * (height - padding.top - padding.bottom);
 
-  const xPad = Math.max((xMax - xMin) * 0.2, 0.2);
-  const yPad = Math.max((yMax - yMin) * 0.2, 0.3);
-
-  xMin = Math.max(0, xMin - xPad);
-  xMax = xMax + xPad;
-  yMin = Math.max(0, yMin - yPad);
-  yMax = yMax + yPad;
-
-  function xScale(x){
-    return padding.left + ((x - xMin) / (xMax - xMin)) * (w - padding.left - padding.right);
-  }
-
-  function yScale(y){
-    return h - padding.bottom - ((y - yMin) / (yMax - yMin)) * (h - padding.top - padding.bottom);
-  }
+  ctx.clearRect(0, 0, width, height);
 
   ctx.strokeStyle = "#d8e4f0";
   ctx.lineWidth = 1;
 
-  for(let i = 0; i <= 5; i++){
-    const y = yMin + i * (yMax - yMin) / 5;
+  for (let i = 0; i <= 5; i++) {
+    const y = yMin + ((yMax - yMin) * i) / 5;
     ctx.beginPath();
     ctx.moveTo(padding.left, yScale(y));
-    ctx.lineTo(w - padding.right, yScale(y));
+    ctx.lineTo(width - padding.right, yScale(y));
     ctx.stroke();
   }
 
-  for(let i = 0; i <= 5; i++){
-    const x = xMin + i * (xMax - xMin) / 5;
+  for (let i = 0; i <= 5; i++) {
+    const x = xMin + ((xMax - xMin) * i) / 5;
     ctx.beginPath();
     ctx.moveTo(xScale(x), padding.top);
-    ctx.lineTo(xScale(x), h - padding.bottom);
+    ctx.lineTo(xScale(x), height - padding.bottom);
     ctx.stroke();
   }
 
@@ -1206,16 +1019,16 @@ function drawChart(){
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(padding.left, padding.top);
-  ctx.lineTo(padding.left, h - padding.bottom);
-  ctx.lineTo(w - padding.right, h - padding.bottom);
+  ctx.lineTo(padding.left, height - padding.bottom);
+  ctx.lineTo(width - padding.right, height - padding.bottom);
   ctx.stroke();
 
   ctx.fillStyle = "#083b6e";
   ctx.font = "16px Segoe UI";
-  ctx.fillText("Stick price (€)", w / 2 - 45, h - 18);
+  ctx.fillText("Stick price (€)", width / 2 - 45, height - 18);
 
   ctx.save();
-  ctx.translate(24, h / 2 + 40);
+  ctx.translate(24, height / 2 + 40);
   ctx.rotate(-Math.PI / 2);
   ctx.fillText("Wrap price (€)", 0, 0);
   ctx.restore();
@@ -1223,13 +1036,13 @@ function drawChart(){
   ctx.font = "14px Segoe UI";
   ctx.fillStyle = "#35546f";
 
-  for(let i = 0; i <= 5; i++){
-    const x = xMin + i * (xMax - xMin) / 5;
-    ctx.fillText(x.toFixed(2), xScale(x) - 14, h - padding.bottom + 24);
+  for (let i = 0; i <= 5; i++) {
+    const x = xMin + ((xMax - xMin) * i) / 5;
+    ctx.fillText(x.toFixed(2), xScale(x) - 14, height - padding.bottom + 24);
   }
 
-  for(let i = 0; i <= 5; i++){
-    const y = yMin + i * (yMax - yMin) / 5;
+  for (let i = 0; i <= 5; i++) {
+    const y = yMin + ((yMax - yMin) * i) / 5;
     ctx.fillText(y.toFixed(2), padding.left - 50, yScale(y) + 4);
   }
 
@@ -1246,69 +1059,91 @@ function drawChart(){
   ctx.lineTo(xScale(lineX2), yScale(lineY2));
   ctx.stroke();
 
-  data.forEach(d => {
-    const x = xScale(d.stick);
-    const y = yScale(d.wrap);
+data.forEach((record) => {
+  const x = xScale(record.stick);
+  const y = yScale(record.wrap);
 
-    ctx.beginPath();
-    ctx.fillStyle = "#0d5cab";
-    ctx.arc(x, y, 7, 0, Math.PI * 2);
-    ctx.fill();
+  // Draw dot
+  ctx.beginPath();
+  ctx.fillStyle = "#0d5cab";
+  ctx.arc(x, y, 7, 0, Math.PI * 2);
+  ctx.fill();
 
-    ctx.beginPath();
-    ctx.fillStyle = "rgba(13,92,171,0.18)";
-    ctx.arc(x, y, 13, 0, Math.PI * 2);
-    ctx.fill();
-  });
+  ctx.beginPath();
+  ctx.fillStyle = "rgba(13,92,171,0.18)";
+  ctx.arc(x, y, 13, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Draw shop name
+  ctx.fillStyle = "#083b6e";
+  ctx.font = "12px Segoe UI";
+  ctx.fillText(record.shop, x + 10, y - 10);
+});
 
   ctx.fillStyle = "#1fa971";
-  ctx.fillRect(w - 240, 20, 18, 18);
+  ctx.fillRect(width - 240, 20, 18, 18);
   ctx.fillStyle = "#35546f";
-  ctx.fillText(`Model line (α=${avgAlpha.toFixed(2)})`, w - 214, 34);
+  ctx.fillText(`Model line (α=${avgAlpha.toFixed(2)})`, width - 214, 34);
 
   ctx.beginPath();
   ctx.fillStyle = "#0d5cab";
-  ctx.arc(w - 231, 62, 7, 0, Math.PI * 2);
+  ctx.arc(width - 231, 62, 7, 0, Math.PI * 2);
   ctx.fill();
   ctx.fillStyle = "#35546f";
-  ctx.fillText("Real shop data", w - 214, 66);
+  ctx.fillText("Real shop data", width - 214, 66);
 }
 
-function addDataPoint(){
+function addDataPoint() {
   const shop = document.getElementById("shopName").value.trim();
   const stick = parseFloat(document.getElementById("newStick").value);
   const wrap = parseFloat(document.getElementById("newWrap").value);
   const status = document.getElementById("statusMessage");
 
-  if (!shop){
+  if (!shop) {
     status.innerText = "Please enter a shop name.";
     return;
   }
 
-  if (isNaN(stick) || isNaN(wrap)){
+  if (isNaN(stick) || isNaN(wrap)) {
     status.innerText = "Please enter valid numbers for stick and wrap prices.";
     return;
   }
 
-  if (stick < 2){
+  if (stick < 2) {
     status.innerText = "Souvlaki stick price cannot be less than €2.00.";
     return;
   }
 
-  if (wrap < stick){
+  if (wrap < stick) {
     status.innerText = "Wrap price must be equal to or higher than the stick price.";
     return;
   }
 
-data.push({ shop, stick, wrap });
+  data.push({ shop, stick, wrap });
 
-render();
-
-status.innerText = `Dataset updated: ${shop} added successfully.`;
-resetForm(false);
+  renderAll();
+  status.innerText = `Dataset updated: ${shop} added successfully.`;
+  resetForm(false);
 }
-    
-    document.getElementById("newStick").addEventListener("input", function () {
+
+function resetForm(clearMessage = true) {
+  document.getElementById("shopName").value = "";
+  document.getElementById("newStick").value = "";
+  document.getElementById("newWrap").value = "";
+
+  if (clearMessage) {
+    document.getElementById("statusMessage").innerText = "";
+  }
+}
+
+function renderAll() {
+  renderTable();
+  renderAverageAlphaBox();
+  renderPredictionAlpha();
+  drawChart();
+}
+
+document.getElementById("newStick").addEventListener("input", function () {
   const stickValue = parseFloat(this.value);
   const wrapInput = document.getElementById("newWrap");
 
@@ -1319,22 +1154,7 @@ resetForm(false);
   }
 });
 
-function resetForm(clearMessage = true){
-  document.getElementById("shopName").value = "";
-  document.getElementById("newStick").value = "";
-  document.getElementById("newWrap").value = "";
-  if (clearMessage){
-    document.getElementById("statusMessage").innerText = "";
-  }
-}
-render();
-
-document.getElementById("alphaValueDisplay").innerText =
-  "α = " + averageAlpha().toFixed(2);
-
-document.getElementById("alphaInline").innerText =
-  averageAlpha().toFixed(2);
-
+renderAll();
 </script>
 
 </body>
