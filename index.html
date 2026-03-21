@@ -559,6 +559,7 @@ button:hover{
 }
 
 #graphSection canvas{
+  margin-top: 50px;
   width:100%;
   max-width:100%;
   height:380px;
@@ -841,18 +842,99 @@ button:hover{
     <div class="section-title">Visual Representation</div>
     <h2>Model Line vs Real Shop Data</h2>
   </div>
+<div class="example-box" mb-2>
+  <div class="example-title">Model Prediction: Kostas</div>
 
-<p class="small-note">
-  The green line shows what the model thinks the wrap price should be. The green line is created using the average alpha (α) from all shops. So for every stick price, it shows the predicted wrap price.
+  <div class="example-row">
+    <div class="example-card">
+      <span class="example-label">Wrap Price (Model)</span>
+      <span class="example-value">€3.70</span>
+    </div>
+
+    <div class="example-symbol">=</div>
+
+    <div class="example-card result-card">
+      <span class="example-label">Alpha (Avg)</span>
+      <span class="example-value">1.68</span>
+    </div>
+
+    <div class="example-symbol">×</div>
+
+    <div class="example-card">
+      <span class="example-label">Stick Price</span>
+      <span class="example-value">€2.20</span>
+    </div>
+  </div>
+
+  <p class="example-note">
+    Model prediction: <strong>Wrap = 1.68 × 2.20 = 3.70</strong>
+  </p>
+
+  <div class="example-divider"></div>
+
+  <div class="example-row">
+    <div class="example-card">
+      <span class="example-label">Actual Wrap Price</span>
+      <span class="example-value">€3.80</span>
+    </div>
+  </div>
+
+<p class="example-note" style="margin-top:14px; font-size:1.05rem;">
+ 💎 Kostas is <strong>+€0.10 above the model</strong>
 </p>
-<p class="small-note">
- It draws a line using the rule: Wrap = α × Stick.
-</p>
-<p class="small-note">
-  If a blue dot is close to the green line, the prediction is good.
-</p>
-    
+</div>
+
   <canvas id="priceChart" width="1000" height="420"></canvas>
+</section>
+    <section>
+  <div class="section-heading">
+    <div class="section-title">Graph Analysis</div>
+    <h2>Who Follows the Model — and Who Stands Out?</h2>
+  </div>
+
+  <p class="small-note">
+    The green line shows the model’s learned pricing pattern: <strong>Wrap ≈ α × Stick</strong>.
+    The blue points are the real shops. When a shop is close to the line, its pricing matches the
+    model well. When it sits above or below the line, it shows a different pricing choice.
+  </p>
+
+  <div class="overview-grid">
+    <div class="info-card">
+      <div class="subhead">Strong Match</div>
+      <p>
+        <strong>Gyros Elladas</strong> and <strong>Thanasis</strong> sit very close to the model line.
+        Their wrap prices closely follow the expected market pattern.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div class="subhead">Slightly Lower</div>
+      <p>
+        <strong>Lefteris</strong> is a little below the line, which suggests a wrap price that is
+        slightly cheaper than the model would expect.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div class="subhead">Above Expectation</div>
+      <p>
+        <strong>Kostas</strong> and <strong>Savvas</strong> appear above the line, meaning they charge
+        a bit more than the model prediction. This can reflect a stronger pricing position.
+      </p>
+    </div>
+  </div>
+
+  <div class="avg-alpha-box">
+    <div class="avg-title">Main Takeaway</div>
+    <p class="avg-text">
+      Most shops follow the same basic pricing relationship, which means the model captures a real pattern.
+    </p>
+    <div class="avg-note">Small gaps from the line = different shop pricing strategies</div>
+    <p class="avg-result">
+      It is machine learning. The model learns from historical shop data and uses that learned pattern
+      to explain existing prices and predict new ones.
+    </p>
+  </div>
 </section>
 
 <section>
