@@ -587,6 +587,26 @@ button:hover{
   margin-top:12px;
   min-height:24px;
 }
+.price-badge{
+  display:inline-block;
+  margin-left:8px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:0.9rem;
+  font-weight:800;
+}
+
+.price-badge.positive{
+  background:#e8f9ef;
+  color:#14845a;
+  border:1px solid #1fa971;
+}
+
+.price-badge.negative{
+  background:#fdecec;
+  color:#b42318;
+  border:1px solid #e55353;
+}
 
 @media (max-width:768px){
   .header{ padding:78px 18px 58px; }
@@ -880,7 +900,8 @@ button:hover{
   </div>
 
 <p class="example-note" style="margin-top:14px; font-size:1.05rem;">
- 💎 Kostas is <strong>+€0.10 above the model</strong>
+  📈 Kostas is priced above the model baseline
+  <span class="price-badge positive">+€0.10</span>
 </p>
 </div>
 
@@ -902,24 +923,21 @@ button:hover{
     <div class="info-card">
       <div class="subhead">Strong Match</div>
       <p>
-        <strong>Gyros Elladas</strong> and <strong>Thanasis</strong> sit very close to the model line.
-        Their wrap prices closely follow the expected market pattern.
-      </p>
-    </div>
-
-    <div class="info-card">
-      <div class="subhead">Slightly Lower</div>
-      <p>
-        <strong>Lefteris</strong> is a little below the line, which suggests a wrap price that is
-        slightly cheaper than the model would expect.
+        <strong>Thanasis</strong> sits almost exactly on the model line, matching the expected pricing pattern.
       </p>
     </div>
 
     <div class="info-card">
       <div class="subhead">Above Expectation</div>
       <p>
-        <strong>Kostas</strong> and <strong>Savvas</strong> appear above the line, meaning they charge
-        a bit more than the model prediction. This can reflect a stronger pricing position.
+        <strong>Kostas</strong> and <strong>Gyros Elladas</strong> are above the line, meaning they charge more than the model predicts.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <div class="subhead">Below Expectation</div>
+      <p>
+        <strong>Lefteris</strong> and <strong>Savvas</strong> fall below the line, suggesting slightly lower pricing than expected.
       </p>
     </div>
   </div>
